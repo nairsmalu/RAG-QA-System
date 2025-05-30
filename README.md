@@ -18,4 +18,10 @@ A Retrieval-Augmented Generation (RAG) system for querying PDF documents using o
 - **Web Framework**: Streamlit
 - **Text Processing**: spaCy for semantic chunking
 
+## Installation
+- **Clone the repository.**
+- **Set Up Virtual Environment:**
+--python -m venv rag_env
+--source rag_env/bin/activate  # On Windows: rag_env\Scripts\activate
+
 
