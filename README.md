@@ -20,21 +20,20 @@ Text Processing: spaCy for semantic chunking
 
 ## 🚀 Installation
 1. Clone the Repository
-2. 
 3. Set Up Virtual Environment
-bashpython -m venv rag_env
+python -m venv rag_env
 source rag_env/bin/activate  # On Windows: rag_env\Scripts\activate
 4. Install Dependencies
-bashpip install -r requirements.txt
+pip install -r requirements.txt
 5. Install Tesseract OCR (for scanned PDFs)
-bashsudo apt-get install tesseract-ocr poppler-utils  # On Ubuntu
+sudo apt-get install tesseract-ocr poppler-utils  # On Ubuntu
 6. Download spaCy Model
-bashpython -m spacy download en_core_web_sm
+python -m spacy download en_core_web_sm
 7. Run Ollama Server
-bashollama serve
+ollama serve
 ollama pull llama3.2:3b
 8. Run the Application
-bashstreamlit run src/app.py
+streamlit run app.py
 
 ## 📖 Usage
 
