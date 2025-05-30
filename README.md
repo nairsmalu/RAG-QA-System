@@ -1,27 +1,52 @@
-# Document Q&A System
-
+Document Q&A System
 A Retrieval-Augmented Generation (RAG) system for querying PDF documents using open-source Large Language Models (LLMs) and vector databases. This project allows users to upload PDFs, process them into a vector store, and ask questions to retrieve accurate answers based on document content.
+✨ Features
 
-## Features
-- **PDF Processing**: Extracts text from PDFs using `pdfplumber`and `PyPDF2`.
-- **Vector Database**: Stores document embeddings in **ChromaDB** for efficient similarity search.
-- **Embeddings**: Generates text embeddings using `sentence-transformers` (e.g., `paraphrase-MiniLM-L3-v2`).
-- **RAG Pipeline**: Combines retrieval from **ChromaDB** with LLM generation using **Ollama** (e.g., `llama3.2:3b`).
-- **Web Interface**: Built with **Streamlit** for uploading PDFs, selecting models, and querying documents.
-- **CPU-Optimized**: Designed to run efficiently on CPU-only systems with lightweight models and batch processing.
+PDF Processing: Extracts text from PDFs using pdfplumber and PyPDF2
+Vector Database: Stores document embeddings in ChromaDB for efficient similarity search
+Embeddings: Generates text embeddings using sentence-transformers (e.g., paraphrase-MiniLM-L3-v2)
+RAG Pipeline: Combines retrieval from ChromaDB with LLM generation using Ollama (e.g., llama3.2:3b)
+Web Interface: Built with Streamlit for uploading PDFs, selecting models, and querying documents
+CPU-Optimized: Designed to run efficiently on CPU-only systems with lightweight models and batch processing
 
-## Tech Stack
-- **LLM**: Local Ollama models (Llama3.2, Mistral, Qwen)
-- **Embeddings**: `sentence-transformers` (paraphrase-MiniLM-L3-v2, all-MiniLM-L6-v2)
-- **Vector Database**: ChromaDB (persistent local storage)
-- **PDF Processing**: pdfplumber, PyPDF2, Tesseract OCR
-- **Web Framework**: Streamlit
-- **Text Processing**: spaCy for semantic chunking
+🛠️ Tech Stack
 
-## Installation
-- **Clone the repository.**
-- **Set Up Virtual Environment:**
---python -m venv rag_env
---source rag_env/bin/activate  # On Windows: rag_env\Scripts\activate
+LLM: Local Ollama models (Llama3.2, Mistral, Qwen)
+Embeddings: sentence-transformers (paraphrase-MiniLM-L3-v2, all-MiniLM-L6-v2)
+Vector Database: ChromaDB (persistent local storage)
+PDF Processing: pdfplumber, PyPDF2, Tesseract OCR
+Web Framework: Streamlit
+Text Processing: spaCy for semantic chunking
 
+🚀 Installation
+1. Clone the Repository
+bashgit clone https://github.com/your-username/Document-QA-System.git
+cd Document-QA-System
+2. Set Up Virtual Environment
+bashpython -m venv rag_env
+source rag_env/bin/activate  # On Windows: rag_env\Scripts\activate
+⚠️ Make sure Python is installed and added to your system path.
+3. Install Dependencies
+bashpip install -r requirements.txt
+4. Install Tesseract OCR (for scanned PDFs)
+bashsudo apt-get install tesseract-ocr poppler-utils  # On Ubuntu
+5. Download spaCy Model
+bashpython -m spacy download en_core_web_sm
+6. Run Ollama Server
+bashollama serve
+ollama pull llama3.2:3b
+7. Run the Application
+bashstreamlit run src/app.py
+📖 Usage
 
+Open the Streamlit app in your browser: http://localhost:8501
+Select an LLM and embedding model from the sidebar
+Upload one or more PDF documents
+Ask questions related to the content of the uploaded documents
+View answers with cited source excerpts
+
+🧪 Example
+
+Upload: A PDF document about machine learning
+Question: "What is the main topic of the document?"
+Answer: "The document discusses the fundamentals of machine learning, including supervised and unsupervised learning techniques." (with source excerpts)
